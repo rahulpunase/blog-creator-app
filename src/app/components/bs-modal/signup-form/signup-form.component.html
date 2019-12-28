@@ -1,0 +1,48 @@
+<form [formGroup]="signUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <input [ngClass]="{'is-valid': s_fn.touched && !s_fn.errors, 'is-invalid':s_fn.errors && s_fn.touched }" formControlName="first_name" placeholder="First Name" type="text" class="form-control" id="first_name">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <input [ngClass]="{'is-valid': s_ln.touched && !s_ln.errors, 'is-invalid':s_ln.errors && s_ln.touched }"
+            formControlName="last_name" placeholder="Last Name" type="text" class="form-control" id="last_name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input [ngClass]="{'is-valid': s_em.touched && !s_em.errors, 'is-invalid':s_em.errors && s_em.touched }"
+            formControlName="email" placeholder="Email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input
+            [ngClass]="{'is-valid': s_un.touched && !s_un.errors, 'is-invalid':s_un.errors && s_un.touched }"
+            formControlName="username" placeholder="Username" type="text" class="form-control" id="username">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input
+            [ngClass]="{'is-valid': s_pwd.touched && !s_pwd.errors, 'is-invalid':s_pwd.errors && s_pwd.touched }"
+            formControlName="password" placeholder="Password" type="password" class="form-control" id="password">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button [disabled]="!signUp.valid" (click)="registerUser()" type="submit" class="btn btn-primary btn-large">Sign up</button>
+      </div>
+    </div>
+  </div>
+</form>

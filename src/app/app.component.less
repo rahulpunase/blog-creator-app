@@ -1,0 +1,29 @@
+// light theme colors
+@primary-color: #6200EE;
+@primary-color-dark: #3700B3;
+@background-color-1: #f0f0f1;
+@background-color-2: #fff;
+@font-color: black;
+
+
+//dark theme color 
+
+.light {
+    color: black;
+    ::ng-deep {
+        .bl-header {
+            background-color: @background-color-2;
+        }
+        .home {
+            background-color: @background-color-1;
+        }
+    }
+}
+.dark {
+    color: white;
+    ::ng-deep {
+        div {
+            background-color: black;
+        }
+    }
+}

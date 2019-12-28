@@ -1,0 +1,20 @@
+<div *ngIf="open" class="error-dialog-full-screen">
+  <div class="error-dialog-header">
+    <div class="error-dialog-cancel-button">
+      <button (click)="close()">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+  </div>
+  <div class="error-dialog-body">
+    <div class="error-content">
+      <div class="error-image">
+        <img src="../../../assets/images/icons/iconfinder_Error_381599.png"/>
+      </div>
+      <div class="error-message">
+        <h1>SERVER ERROR!!!</h1>
+        <p>{{errorMessage}}</p>
+      </div>
+    </div>
+  </div>
+</div>

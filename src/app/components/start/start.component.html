@@ -1,0 +1,35 @@
+  <div class="start-page">
+      <div class="start-model">
+        <div class="start-header"></div>
+      </div>
+      <div class="start-below-body">
+        <div class="start-text">
+          <h1>Start writing blogs</h1>
+          <h1>Publish your content</h1>
+          <div>
+            <h4>or just want to read? Get started quickly by selecting your preferences</h4>
+          </div>
+        </div>
+        <div class="start-preferences">
+          <div class="aligned">
+            <ul *ngIf="categories" class="st-pre ks-cboxtags">
+              <li class="start-selectors" *ngFor="let category of categories.categories">
+                <input (change)="addToPreferences(selectedPrefs)" #selectedPrefs type="checkbox" [id]="category.category_id" [value]="category.category_id">
+                <label [for]="category.category_id">{{ category.category_name }}</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="get-started">
+          <div class="aligned">
+            <div class="aligned-center">
+              <h2>Get Started</h2>
+              <div class="button">
+                <button (click)="openSignUpModel()" class="btn-lg btn-block btn btn-light">Sign Up</button>
+              </div>
+              <p style="padding: 6px">Already have an account? <a href="/">Sign in</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
