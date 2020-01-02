@@ -12,6 +12,9 @@ export class SignupFormComponent implements OnInit {
 
   signUp: FormGroup;
   preferences = [];
+  error = false;
+  success = false;
+  message = '';
   constructor(
     private basicHttpSvc: BasicHttpService,
     private bsModalSvc: BsModalService) {
@@ -61,7 +64,15 @@ export class SignupFormComponent implements OnInit {
   registerUser() {
     this.basicHttpSvc.registerUser({...this.signUp.value, ...{preferences: this.preferences}})
       .subscribe(response => {
-      console.log('If User is registered', response);
+        if (response.error) {
+          this.error = true;
+          this.success = false;
+          this.message = response.error.errorMessage;
+        } else {
+          this.error = false;
+          this.success = true;
+          this.message = response.message;
+        }
     });
   }
 }

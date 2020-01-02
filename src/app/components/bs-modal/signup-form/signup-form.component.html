@@ -46,3 +46,13 @@
     </div>
   </div>
 </form>
+<div class="container margin-top">
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+</div>
+<div class="container margin-top">
+  <div *ngIf="success" class="alert alert-success" role="alert">
+    {{message}}
+  </div>
+</div>
