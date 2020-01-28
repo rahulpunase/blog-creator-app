@@ -19,6 +19,8 @@ import { BsModalService } from './services/bs-modal.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BlogInterceptor } from './blog.interceptor';
 import { BsErrorDialogsComponent } from './components/bs-error-dialogs/bs-error-dialogs.component';
+import { SigninFormComponent } from './components/bs-modal/signin-form/signin-form.component';
+import { BasicUserService } from './services/basic-user.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { BsErrorDialogsComponent } from './components/bs-error-dialogs/bs-error-
     StartComponent,
     BsModalComponent,
     SignupFormComponent,
-    BsErrorDialogsComponent
+    BsErrorDialogsComponent,
+    SigninFormComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { BsErrorDialogsComponent } from './components/bs-error-dialogs/bs-error-
     FetchStartData,
     BasicHttpService,
     BsModalService,
+    BasicUserService,
     [
       {
         provide: HTTP_INTERCEPTORS,

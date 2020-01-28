@@ -21,7 +21,7 @@ export class BlogInterceptor implements  HttpInterceptor {
       }),
       catchError((err: any) => {
         if (err instanceof  HttpErrorResponse) {
-          console.log(err);
+          console.log('Error => ', err);
           this.bsErrorDialogsSvc.openErrorDialog({
             open: true,
             errorMessage: err.message

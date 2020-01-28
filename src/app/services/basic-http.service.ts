@@ -22,4 +22,10 @@ export class BasicHttpService {
   registerUser(data): Observable<IUserRegisteredMessage> {
     return this.http.post<IUserRegisteredMessage>(this.domain + '/user/register', data);
   }
+  /*
+  * Login user to the website
+  * */
+  loginUser(data): Observable<any> {
+    return this.http.post<any>(this.domain + '/user/login', data);
+  }
 }

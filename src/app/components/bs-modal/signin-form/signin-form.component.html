@@ -1,0 +1,37 @@
+<form [formGroup]="signIn">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input
+            [ngClass]="{'is-valid': s_un.touched && !s_un.errors, 'is-invalid':s_un.errors && s_un.touched }"
+            formControlName="username" placeholder="Username" type="text" class="form-control" id="username">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input
+            [ngClass]="{'is-valid': s_pwd.touched && !s_pwd.errors, 'is-invalid':s_pwd.errors && s_pwd.touched }"
+            formControlName="password" placeholder="Password" type="password" class="form-control" id="password">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button [disabled]="!signIn.valid" (click)="loginUser()" type="submit" class="btn btn-primary btn-large">Login</button>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="container margin-top">
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+</div>
+<div class="container margin-top">
+  <div *ngIf="success" class="alert alert-success" role="alert">
+    {{message}}
+  </div>
+</div>

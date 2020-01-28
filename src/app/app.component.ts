@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +7,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
+  hideHeader = true;
+
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-  }
-
-  get hideHeader() {
-    return this.router.url === '/start';
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/home') {
+          this.hideHeader = false;
+        } else {
+          this.hideHeader = true;
+        }
+      }
+    });
   }
 }
