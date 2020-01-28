@@ -27,6 +27,10 @@ export class StartComponent implements OnInit {
     this.bsModalSvc.setPreferences(this.selectedPreferences);
   }
 
+  openSignInModel() {
+    this.bsModalSvc.open(this.bsModalSvc.Blocks.SIGNIN);
+  }
+
   addToPreferences(selectedPrefs: HTMLInputElement) {
     if (selectedPrefs.checked) {
       this.selectedPreferences.push(selectedPrefs.value);

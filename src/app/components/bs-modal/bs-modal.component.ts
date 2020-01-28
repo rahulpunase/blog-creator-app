@@ -11,11 +11,13 @@ export class BsModalComponent implements OnInit {
 
   id = '';
   prefs = [];
+  modelIdClose = '';
   constructor(private bsModalSvc: BsModalService) {
   }
 
   ngOnInit() {
     this.id = this.bsModalSvc.modelId;
+    this.modelIdClose = this.bsModalSvc.modelIdClose;
     this.prefs = this.bsModalSvc.savedPreferences;
   }
 

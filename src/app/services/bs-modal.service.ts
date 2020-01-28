@@ -8,6 +8,7 @@ import {BehaviorSubject} from 'rxjs';
 export class BsModalService {
 
   modelId = 'large-modal-opener';
+  modelIdClose = 'large-modal-opener-closer'
   Blocks = {
    SIGNUP: 'SignUp',
    SIGNIN: 'SignIn',
@@ -30,5 +31,8 @@ export class BsModalService {
   }
   setPreferences(prefs) {
     this.preferencesSubject.next(prefs);
+  }
+  close() {
+    document.getElementById(this.modelIdClose).click();
   }
 }
